@@ -1,0 +1,17 @@
+{
+  "name": "com.duux.climate",
+  "version": "0.0.1",
+  "main": "app.js",
+  "scripts": {
+    "convert": "node scripts/convertCapabilitiesToFlowCards.js"
+  },
+  "devDependencies": {
+    "homey": "^2.10.0"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "homey-oauth2app": "^3.5.0",
+    "node-fetch": "^2.6.1",
+    "ws": "^8.8.1"
+  }
+}
