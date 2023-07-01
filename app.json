@@ -1,1 +1,1252 @@
-{"_comment":"This file is generated. Please edit .homeycompose/app.json instead.","id":"com.duux.climate","version":"1.1.3","compatibility":">=5.0.0","sdk":3,"brandColor":"#00b1b2","homepage":"https://duux.com","support":"mailto:homey@duux.com","platforms":["local","cloud"],"connectivity":["cloud"],"name":{"en":"Duux"},"description":{"en":"Designed for better air"},"category":["climate"],"images":{"xlarge":"/assets/images/xlarge.jpg","large":"/assets/images/large.jpg","small":"/assets/images/small.jpg"},"author":{"name":"Duux BV"},"contributors":{"developers":[{"email":"homey@duux.com","name":"Duux"}]},"flow":{"triggers":[{"id":"measure_filter","title":{"en":"Filter-status changed","nl":"Filterstatus is veranderd"},"titleFormatted":{"en":"Filter-status changed","nl":"Filterstatus is veranderd"},"insights":true,"tokens":[{"name":"value","type":"number","title":{"en":"Filter remaining in %","nl":"Filter remaining in %"},"example":99}],"args":[{"type":"device","name":"Device","filter":"driver_id=Bright"}]},{"id":"measure_humidity","title":{"en":"Humidity changed","nl":"Luchtvochtigheid is veranderd"},"titleFormatted":{"en":"Measured humidity changed","nl":"Gemeten luchtvochtigheid is veranderd"},"insights":true,"tokens":[{"name":"value","type":"number","title":{"en":"Humidity in percent","nl":"Luchtvochtigheid in procent"},"example":50}],"args":[{"type":"device","name":"Device","filter":"driver_id=Beam|BeamMini"}]},{"id":"measure_pm25","title":{"en":"Particulate Matter-level (PM 2.5) changed","nl":"Fijnstofniveau (PM 2.5) is veranderd"},"titleFormatted":{"en":"Measured Particulate Matter-level changed","nl":"Fijnstofniveau is veranderd"},"insights":true,"tokens":[{"name":"value","type":"number","title":{"en":"Particulate Matter in µg/m³","nl":"Fijnstof in µg/m³"},"example":5}],"args":[{"type":"device","name":"Device","filter":"driver_id=Bright"}]},{"id":"measure_temperature","title":{"en":"Temperature changed","nl":"Temperatuur is veranderd"},"titleFormatted":{"en":"Measured temperature has changed","nl":"Gemeten temperatuur is veranderd"},"insights":true,"tokens":[{"name":"value","type":"number","title":{"en":"Temperature in °C","nl":"Temperatuur in °C"},"example":20}],"args":[{"type":"device","name":"Device","filter":"driver_id=Beam|BeamMini|Edge|Threesixty"}]}],"actions":[{"id":"beam_humidity","type":"device","title":{"en":"Set humidity","nl":"Stel humidity in"},"titleFormatted":{"en":"The humidity is set to [[beam_humidity]]","nl":"De luchtvochtigheid is ingesteld op [[beam_humidity]]"},"args":[{"name":"beam_humidity","title":{"en":"Humidity","nl":"Luchtvochtigheid"},"type":"range","min":0,"max":30,"step":1,"label":"%"},{"type":"device","name":"Device","filter":"driver_id=Beam|BeamMini"}]},{"id":"beam_mini_spray_volume","type":"device","title":{"en":"Set mode","nl":"Stel mode in"},"titleFormatted":{"en":"The mode is set to [[beam_mini_spray_volume]]","nl":"De mode is ingesteld op [[beam_mini_spray_volume]]"},"args":[{"name":"beam_mini_spray_volume","title":{"en":"Mode","nl":"Mode"},"type":"dropdown","values":[{"id":"0","title":{"en":"I"}},{"id":"1","title":{"en":"II"}},{"id":"2","title":{"en":"III"}}]},{"type":"device","name":"Device","filter":"driver_id=BeamMini"}]},{"id":"beam_mode","type":"device","title":{"en":"Set mode","nl":"Stel mode in"},"titleFormatted":{"en":"The mode is set to [[beam_mode]]","nl":"De modus is ingesteld op [[beam_mode]]"},"args":[{"name":"beam_mode","title":{"en":"Mode","nl":"Modus"},"type":"dropdown","values":[{"id":"0","title":{"en":"Manual","nl":"Handmatig"}},{"id":"1","title":{"en":"Auto","nl":"Automatisch"}}]},{"type":"device","name":"Device","filter":"driver_id=Beam"}]},{"id":"beam_mode_mini","type":"device","title":{"en":"Set mode","nl":"Stel mode in"},"titleFormatted":{"en":"The mode is set to [[beam_mode_mini]]","nl":"De modus is ingesteld op [[beam_mode_mini]]"},"args":[{"name":"beam_mode_mini","title":{"en":"Mode","nl":"Modus"},"type":"dropdown","values":[{"id":"0","title":{"en":"Normal","nl":"Normaal"}},{"id":"1","title":{"en":"Auto","nl":"Automatisch"}}]},{"type":"device","name":"Device","filter":"driver_id=BeamMini"}]},{"id":"beam_spray_volume","type":"device","title":{"en":"Set level","nl":"Stel level in"},"titleFormatted":{"en":"The level is set to [[beam_spray_volume]]","nl":"De niveau is ingesteld op [[beam_spray_volume]]"},"args":[{"name":"beam_spray_volume","title":{"en":"Level","nl":"Niveau"},"type":"dropdown","values":[{"id":"0","title":{"en":"Low","nl":"Laag"}},{"id":"1","title":{"en":"Medium","nl":"Medium"}},{"id":"2","title":{"en":"High","nl":"Hoog"}}]},{"type":"device","name":"Device","filter":"driver_id=Beam"}]},{"id":"bright_fan_speed","type":"device","title":{"en":"Set speed","nl":"Stel speed in"},"titleFormatted":{"en":"The speed is set to [[bright_fan_speed]]","nl":"De snelheid is ingesteld op [[bright_fan_speed]]"},"args":[{"name":"bright_fan_speed","title":{"en":"Speed","nl":"Snelheid"},"type":"dropdown","values":[{"id":"1","title":{"en":"I"}},{"id":"2","title":{"en":"II"}},{"id":"3","title":{"en":"III"}},{"id":"0","title":{"en":"Auto"}},{"id":"4","title":{"en":"Night","nl":"Nacht"}}]},{"type":"device","name":"Device","filter":"driver_id=Bright"}]},{"id":"edge_heat_level","type":"device","title":{"en":"Set heating","nl":"Stel heating in"},"titleFormatted":{"en":"The heating is set to [[edge_heat_level]]","nl":"De verwarming is ingesteld op [[edge_heat_level]]"},"args":[{"name":"edge_heat_level","title":{"en":"Heating","nl":"Verwarming"},"type":"dropdown","values":[{"id":"1","title":{"en":"Eco"}},{"id":"0","title":{"en":"Normal"}}]},{"type":"device","name":"Device","filter":"driver_id=Threesixty"}]},{"id":"generic_ioniser_mode","type":"device","title":{"en":"Set ioniser","nl":"Stel ioniser in"},"titleFormatted":{"en":"The ioniser is set to [[generic_ioniser_mode]]","nl":"De ionisator is ingesteld op [[generic_ioniser_mode]]"},"args":[{"name":"generic_ioniser_mode","title":{"en":"Ioniser","nl":"Ionisator"},"type":"dropdown","values":[{"id":"true","title":{"en":"On","nl":"Aan"}},{"id":"false","title":{"en":"Off","nl":"Uit"}}]},{"type":"device","name":"Device","filter":"driver_id=Bright"}]},{"id":"generic_night_mode","type":"device","title":{"en":"Set night mode","nl":"Stel night mode in"},"titleFormatted":{"en":"The night mode is set to [[generic_night_mode]]","nl":"De nachtmodus is ingesteld op [[generic_night_mode]]"},"args":[{"name":"generic_night_mode","title":{"en":"Night Mode","nl":"Nachtmodus"},"type":"dropdown","values":[{"id":"true","title":{"en":"On","nl":"Aan"}},{"id":"false","title":{"en":"Off","nl":"Uit"}}]},{"type":"device","name":"Device","filter":"driver_id=Edge"}]},{"id":"target_temperature","type":"device","title":{"en":"Set temperature","nl":"Stel temperature in"},"titleFormatted":{"en":"The temperature is set to [[target_temperature]]","nl":"De temperatuur is ingesteld op [[target_temperature]]"},"args":[{"name":"target_temperature","title":{"en":"Temperature","nl":"Temperatuur"},"type":"range","min":0,"max":30,"step":1,"label":"°C"},{"type":"device","name":"Device","filter":"driver_id=Edge|Threesixty"}]},{"id":"threesixty_heat_level","type":"device","title":{"en":"Set heating","nl":"Stel heating in"},"titleFormatted":{"en":"The heating is set to [[threesixty_heat_level]]","nl":"De verwarming is ingesteld op [[threesixty_heat_level]]"},"args":[{"name":"threesixty_heat_level","title":{"en":"Heating","nl":"Verwarming"},"type":"dropdown","values":[{"id":"2","title":{"en":"1"}},{"id":"1","title":{"en":"2"}},{"id":"0","title":{"en":"3"}}]},{"type":"device","name":"Device","filter":"driver_id=Threesixty"}]}]},"drivers":[{"icon":"/drivers/Beam/assets/icon.svg","platforms":["local","cloud"],"connectivity":["cloud"],"images":{"small":"/drivers/Beam/assets/small.jpg","large":"/drivers/Beam/assets/large.jpg"},"pair":[{"id":"login_oauth2","template":"login_oauth2"},{"id":"list_devices","template":"list_devices","navigation":{"next":"add_devices"}},{"id":"add_devices","template":"add_devices"}],"repair":[{"id":"login_oauth2","template":"login_oauth2"}],"id":"Beam","name":{"en":"Beam"},"class":"fan","capabilities":["onoff","beam_humidity","beam_mode","beam_spray_volume","measure_humidity","measure_temperature"]},{"icon":"/drivers/BeamMini/assets/icon.svg","platforms":["local","cloud"],"connectivity":["cloud"],"images":{"small":"/drivers/BeamMini/assets/small.jpg","large":"/drivers/BeamMini/assets/large.jpg"},"pair":[{"id":"login_oauth2","template":"login_oauth2"},{"id":"list_devices","template":"list_devices","navigation":{"next":"add_devices"}},{"id":"add_devices","template":"add_devices"}],"repair":[{"id":"login_oauth2","template":"login_oauth2"}],"id":"BeamMini","name":{"en":"Beam Mini"},"class":"fan","capabilities":["onoff","beam_humidity","beam_mode_mini","beam_mini_spray_volume","measure_humidity","measure_temperature"]},{"icon":"/drivers/Bright/assets/icon.svg","platforms":["local","cloud"],"connectivity":["cloud"],"images":{"small":"/drivers/Bright/assets/small.jpg","large":"/drivers/Bright/assets/large.jpg"},"pair":[{"id":"login_oauth2","template":"login_oauth2"},{"id":"list_devices","template":"list_devices","navigation":{"next":"add_devices"}},{"id":"add_devices","template":"add_devices"}],"repair":[{"id":"login_oauth2","template":"login_oauth2"}],"id":"Bright","name":{"en":"Bright"},"class":"fan","capabilities":["onoff","bright_fan_speed","generic_ioniser_mode","measure_pm25","measure_filter"]},{"icon":"/drivers/Edge/assets/icon.svg","platforms":["local","cloud"],"connectivity":["cloud"],"images":{"small":"/drivers/Edge/assets/small.jpg","large":"/drivers/Edge/assets/large.jpg"},"pair":[{"id":"login_oauth2","template":"login_oauth2"},{"id":"list_devices","template":"list_devices","navigation":{"next":"add_devices"}},{"id":"add_devices","template":"add_devices"}],"repair":[{"id":"login_oauth2","template":"login_oauth2"}],"id":"Edge","name":{"en":"Edge"},"class":"fan","capabilities":["onoff","target_temperature","edge_heat_level","measure_temperature","generic_night_mode"]},{"icon":"/drivers/Threesixty/assets/icon.svg","platforms":["local","cloud"],"connectivity":["cloud"],"images":{"small":"/drivers/Threesixty/assets/small.jpg","large":"/drivers/Threesixty/assets/large.jpg"},"pair":[{"id":"login_oauth2","template":"login_oauth2"},{"id":"list_devices","template":"list_devices","navigation":{"next":"add_devices"}},{"id":"add_devices","template":"add_devices"}],"repair":[{"id":"login_oauth2","template":"login_oauth2"}],"id":"Threesixty","name":{"en":"Threesixty"},"class":"fan","capabilities":["onoff","target_temperature","threesixty_heat_level","measure_temperature"]}],"capabilities":{"beam_humidity":{"type":"number","title":{"en":"Humidity","nl":"Luchtvochtigheid"},"uiComponent":"slider","getable":true,"setable":true,"units":"%","min":20,"max":80,"step":1,"_driverIds":["Beam","BeamMini"]},"beam_mini_spray_volume":{"type":"string","title":{"en":"Mode","nl":"Mode"},"uiComponent":"picker","getable":true,"setable":true,"values":[{"id":"0","title":{"en":"I"}},{"id":"1","title":{"en":"II"}},{"id":"2","title":{"en":"III"}}],"_driverIds":["BeamMini"]},"beam_mode":{"type":"string","title":{"en":"Mode","nl":"Modus"},"uiComponent":"picker","getable":true,"setable":true,"values":[{"id":"0","title":{"en":"Manual","nl":"Handmatig"}},{"id":"1","title":{"en":"Auto","nl":"Automatisch"}}],"_driverIds":["Beam"]},"beam_mode_mini":{"type":"string","title":{"en":"Mode","nl":"Modus"},"uiComponent":"picker","getable":true,"setable":true,"values":[{"id":"0","title":{"en":"Normal","nl":"Normaal"}},{"id":"1","title":{"en":"Auto","nl":"Automatisch"}}],"_driverIds":["BeamMini"]},"beam_spray_volume":{"type":"string","title":{"en":"Level","nl":"Niveau"},"uiComponent":"picker","getable":true,"setable":true,"values":[{"id":"0","title":{"en":"Low","nl":"Laag"}},{"id":"1","title":{"en":"Medium","nl":"Medium"}},{"id":"2","title":{"en":"High","nl":"Hoog"}}],"_driverIds":["Beam"]},"bright_fan_speed":{"type":"string","title":{"en":"Speed","nl":"Snelheid"},"uiComponent":"picker","getable":true,"setable":true,"values":[{"id":"1","title":{"en":"I"}},{"id":"2","title":{"en":"II"}},{"id":"3","title":{"en":"III"}},{"id":"0","title":{"en":"Auto"}},{"id":"4","title":{"en":"Night","nl":"Nacht"}}],"_driverIds":["Bright"]},"edge_heat_level":{"type":"string","title":{"en":"Heating","nl":"Verwarming"},"uiComponent":"picker","getable":true,"setable":true,"values":[{"id":"1","title":{"en":"Eco"}},{"id":"0","title":{"en":"Normal"}}],"_driverIds":["Threesixty"]},"generic_ioniser_mode":{"type":"boolean","title":{"en":"Ioniser","nl":"Ionisator"},"uiComponent":"toggle","getable":true,"setable":true,"_driverIds":["Bright"]},"generic_night_mode":{"type":"boolean","title":{"en":"Night Mode","nl":"Nachtmodus"},"uiComponent":"toggle","getable":true,"setable":true,"_driverIds":["Edge"]},"measure_filter":{"type":"number","title":{"en":"Filter remaining","nl":"Filter resterend"},"uiComponent":"sensor","getable":true,"setable":false,"units":"%","min":0,"max":100,"step":1,"decimals":0,"_driverIds":["Bright"]},"measure_humidity":{"type":"number","title":{"en":"Current humidity","nl":"Huidige luchtvochtigheid"},"uiComponent":"sensor","getable":true,"setable":false,"units":"%","min":0,"max":100,"step":1,"decimals":0},"measure_pm25":{"type":"number","title":{"en":"Particulate matter (PM 2.5)","nl":"Fijnstof (PM 2.5)"},"uiComponent":"sensor","getable":true,"setable":false,"units":"µg/m³","min":0,"max":999,"step":1,"decimals":0},"measure_temperature":{"type":"number","title":{"en":"Current temperature","nl":"Huidige temperatuur"},"uiComponent":"sensor","getable":true,"setable":false,"units":"°C","min":0,"max":100,"step":1,"decimals":0},"target_temperature":{"type":"number","title":{"en":"Temperature","nl":"Temperatuur"},"uiComponent":"thermostat","getable":true,"setable":true,"units":"°C","_driverIds":["Edge","Threesixty"]},"threesixty_heat_level":{"type":"string","title":{"en":"Heating","nl":"Verwarming"},"uiComponent":"picker","getable":true,"setable":true,"values":[{"id":"2","title":{"en":"1"}},{"id":"1","title":{"en":"2"}},{"id":"0","title":{"en":"3"}}],"_driverIds":["Threesixty"]}}}
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.duux.climate",
+  "version": "1.1.3",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "brandColor": "#00b1b2",
+  "homepage": "https://duux.com",
+  "support": "mailto:homey@duux.com",
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "connectivity": [
+    "cloud"
+  ],
+  "name": {
+    "en": "Duux"
+  },
+  "description": {
+    "en": "Designed for better air"
+  },
+  "category": [
+    "climate"
+  ],
+  "images": {
+    "xlarge": "/assets/images/xlarge.jpg",
+    "large": "/assets/images/large.jpg",
+    "small": "/assets/images/small.jpg"
+  },
+  "author": {
+    "name": "Duux BV"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "email": "homey@duux.com",
+        "name": "Duux"
+      }
+    ]
+  },
+  "flow": {
+    "triggers": [
+      {
+        "id": "measure_filter",
+        "title": {
+          "en": "Filter-status changed",
+          "nl": "Filterstatus is veranderd"
+        },
+        "titleFormatted": {
+          "en": "Filter-status changed",
+          "nl": "Filterstatus is veranderd"
+        },
+        "insights": true,
+        "tokens": [
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Filter remaining in %",
+              "nl": "Filter remaining in %"
+            },
+            "example": 99
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Bright"
+          }
+        ]
+      },
+      {
+        "id": "measure_humidity",
+        "title": {
+          "en": "Humidity changed",
+          "nl": "Luchtvochtigheid is veranderd"
+        },
+        "titleFormatted": {
+          "en": "Measured humidity changed",
+          "nl": "Gemeten luchtvochtigheid is veranderd"
+        },
+        "insights": true,
+        "tokens": [
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Humidity in percent",
+              "nl": "Luchtvochtigheid in procent"
+            },
+            "example": 50
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Beam|BeamMini"
+          }
+        ]
+      },
+      {
+        "id": "measure_pm25",
+        "title": {
+          "en": "Particulate Matter-level (PM 2.5) changed",
+          "nl": "Fijnstofniveau (PM 2.5) is veranderd"
+        },
+        "titleFormatted": {
+          "en": "Measured Particulate Matter-level changed",
+          "nl": "Fijnstofniveau is veranderd"
+        },
+        "insights": true,
+        "tokens": [
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Particulate Matter in µg/m³",
+              "nl": "Fijnstof in µg/m³"
+            },
+            "example": 5
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Bright"
+          }
+        ]
+      },
+      {
+        "id": "measure_temperature",
+        "title": {
+          "en": "Temperature changed",
+          "nl": "Temperatuur is veranderd"
+        },
+        "titleFormatted": {
+          "en": "Measured temperature has changed",
+          "nl": "Gemeten temperatuur is veranderd"
+        },
+        "insights": true,
+        "tokens": [
+          {
+            "name": "value",
+            "type": "number",
+            "title": {
+              "en": "Temperature in °C",
+              "nl": "Temperatuur in °C"
+            },
+            "example": 20
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Beam|BeamMini|Edge|Threesixty"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "beam_humidity",
+        "type": "device",
+        "title": {
+          "en": "Set humidity",
+          "nl": "Stel humidity in"
+        },
+        "titleFormatted": {
+          "en": "The humidity is set to [[beam_humidity]]",
+          "nl": "De luchtvochtigheid is ingesteld op [[beam_humidity]]"
+        },
+        "args": [
+          {
+            "name": "beam_humidity",
+            "title": {
+              "en": "Humidity",
+              "nl": "Luchtvochtigheid"
+            },
+            "type": "range",
+            "min": 0,
+            "max": 30,
+            "step": 1,
+            "label": "%"
+          },
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Beam|BeamMini"
+          }
+        ]
+      },
+      {
+        "id": "beam_mini_spray_volume",
+        "type": "device",
+        "title": {
+          "en": "Set mode",
+          "nl": "Stel mode in"
+        },
+        "titleFormatted": {
+          "en": "The mode is set to [[beam_mini_spray_volume]]",
+          "nl": "De mode is ingesteld op [[beam_mini_spray_volume]]"
+        },
+        "args": [
+          {
+            "name": "beam_mini_spray_volume",
+            "title": {
+              "en": "Mode",
+              "nl": "Mode"
+            },
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "title": {
+                  "en": "I"
+                }
+              },
+              {
+                "id": "1",
+                "title": {
+                  "en": "II"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "III"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=BeamMini"
+          }
+        ]
+      },
+      {
+        "id": "beam_mode",
+        "type": "device",
+        "title": {
+          "en": "Set mode",
+          "nl": "Stel mode in"
+        },
+        "titleFormatted": {
+          "en": "The mode is set to [[beam_mode]]",
+          "nl": "De modus is ingesteld op [[beam_mode]]"
+        },
+        "args": [
+          {
+            "name": "beam_mode",
+            "title": {
+              "en": "Mode",
+              "nl": "Modus"
+            },
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "title": {
+                  "en": "Manual",
+                  "nl": "Handmatig"
+                }
+              },
+              {
+                "id": "1",
+                "title": {
+                  "en": "Auto",
+                  "nl": "Automatisch"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Beam"
+          }
+        ]
+      },
+      {
+        "id": "beam_mode_mini",
+        "type": "device",
+        "title": {
+          "en": "Set mode",
+          "nl": "Stel mode in"
+        },
+        "titleFormatted": {
+          "en": "The mode is set to [[beam_mode_mini]]",
+          "nl": "De modus is ingesteld op [[beam_mode_mini]]"
+        },
+        "args": [
+          {
+            "name": "beam_mode_mini",
+            "title": {
+              "en": "Mode",
+              "nl": "Modus"
+            },
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "title": {
+                  "en": "Normal",
+                  "nl": "Normaal"
+                }
+              },
+              {
+                "id": "1",
+                "title": {
+                  "en": "Auto",
+                  "nl": "Automatisch"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=BeamMini"
+          }
+        ]
+      },
+      {
+        "id": "beam_spray_volume",
+        "type": "device",
+        "title": {
+          "en": "Set level",
+          "nl": "Stel level in"
+        },
+        "titleFormatted": {
+          "en": "The level is set to [[beam_spray_volume]]",
+          "nl": "De niveau is ingesteld op [[beam_spray_volume]]"
+        },
+        "args": [
+          {
+            "name": "beam_spray_volume",
+            "title": {
+              "en": "Level",
+              "nl": "Niveau"
+            },
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "0",
+                "title": {
+                  "en": "Low",
+                  "nl": "Laag"
+                }
+              },
+              {
+                "id": "1",
+                "title": {
+                  "en": "Medium",
+                  "nl": "Medium"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "High",
+                  "nl": "Hoog"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Beam"
+          }
+        ]
+      },
+      {
+        "id": "bright_fan_speed",
+        "type": "device",
+        "title": {
+          "en": "Set speed",
+          "nl": "Stel speed in"
+        },
+        "titleFormatted": {
+          "en": "The speed is set to [[bright_fan_speed]]",
+          "nl": "De snelheid is ingesteld op [[bright_fan_speed]]"
+        },
+        "args": [
+          {
+            "name": "bright_fan_speed",
+            "title": {
+              "en": "Speed",
+              "nl": "Snelheid"
+            },
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "I"
+                }
+              },
+              {
+                "id": "2",
+                "title": {
+                  "en": "II"
+                }
+              },
+              {
+                "id": "3",
+                "title": {
+                  "en": "III"
+                }
+              },
+              {
+                "id": "0",
+                "title": {
+                  "en": "Auto"
+                }
+              },
+              {
+                "id": "4",
+                "title": {
+                  "en": "Night",
+                  "nl": "Nacht"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Bright"
+          }
+        ]
+      },
+      {
+        "id": "edge_heat_level",
+        "type": "device",
+        "title": {
+          "en": "Set heating",
+          "nl": "Stel heating in"
+        },
+        "titleFormatted": {
+          "en": "The heating is set to [[edge_heat_level]]",
+          "nl": "De verwarming is ingesteld op [[edge_heat_level]]"
+        },
+        "args": [
+          {
+            "name": "edge_heat_level",
+            "title": {
+              "en": "Heating",
+              "nl": "Verwarming"
+            },
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "1",
+                "title": {
+                  "en": "Eco"
+                }
+              },
+              {
+                "id": "0",
+                "title": {
+                  "en": "Normal"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Threesixty"
+          }
+        ]
+      },
+      {
+        "id": "generic_ioniser_mode",
+        "type": "device",
+        "title": {
+          "en": "Set ioniser",
+          "nl": "Stel ioniser in"
+        },
+        "titleFormatted": {
+          "en": "The ioniser is set to [[generic_ioniser_mode]]",
+          "nl": "De ionisator is ingesteld op [[generic_ioniser_mode]]"
+        },
+        "args": [
+          {
+            "name": "generic_ioniser_mode",
+            "title": {
+              "en": "Ioniser",
+              "nl": "Ionisator"
+            },
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "true",
+                "title": {
+                  "en": "On",
+                  "nl": "Aan"
+                }
+              },
+              {
+                "id": "false",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Bright"
+          }
+        ]
+      },
+      {
+        "id": "generic_night_mode",
+        "type": "device",
+        "title": {
+          "en": "Set night mode",
+          "nl": "Stel night mode in"
+        },
+        "titleFormatted": {
+          "en": "The night mode is set to [[generic_night_mode]]",
+          "nl": "De nachtmodus is ingesteld op [[generic_night_mode]]"
+        },
+        "args": [
+          {
+            "name": "generic_night_mode",
+            "title": {
+              "en": "Night Mode",
+              "nl": "Nachtmodus"
+            },
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "true",
+                "title": {
+                  "en": "On",
+                  "nl": "Aan"
+                }
+              },
+              {
+                "id": "false",
+                "title": {
+                  "en": "Off",
+                  "nl": "Uit"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Edge"
+          }
+        ]
+      },
+      {
+        "id": "target_temperature",
+        "type": "device",
+        "title": {
+          "en": "Set temperature",
+          "nl": "Stel temperature in"
+        },
+        "titleFormatted": {
+          "en": "The temperature is set to [[target_temperature]]",
+          "nl": "De temperatuur is ingesteld op [[target_temperature]]"
+        },
+        "args": [
+          {
+            "name": "target_temperature",
+            "title": {
+              "en": "Temperature",
+              "nl": "Temperatuur"
+            },
+            "type": "range",
+            "min": 0,
+            "max": 30,
+            "step": 1,
+            "label": "°C"
+          },
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Edge|Threesixty"
+          }
+        ]
+      },
+      {
+        "id": "threesixty_heat_level",
+        "type": "device",
+        "title": {
+          "en": "Set heating",
+          "nl": "Stel heating in"
+        },
+        "titleFormatted": {
+          "en": "The heating is set to [[threesixty_heat_level]]",
+          "nl": "De verwarming is ingesteld op [[threesixty_heat_level]]"
+        },
+        "args": [
+          {
+            "name": "threesixty_heat_level",
+            "title": {
+              "en": "Heating",
+              "nl": "Verwarming"
+            },
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "2",
+                "title": {
+                  "en": "1"
+                }
+              },
+              {
+                "id": "1",
+                "title": {
+                  "en": "2"
+                }
+              },
+              {
+                "id": "0",
+                "title": {
+                  "en": "3"
+                }
+              }
+            ]
+          },
+          {
+            "type": "device",
+            "name": "Device",
+            "filter": "driver_id=Threesixty"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "icon": "/drivers/Beam/assets/icon.svg",
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/Beam/assets/small.jpg",
+        "large": "/drivers/Beam/assets/large.jpg"
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        }
+      ],
+      "id": "Beam",
+      "name": {
+        "en": "Beam"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "beam_humidity",
+        "beam_mode",
+        "beam_spray_volume",
+        "measure_humidity",
+        "measure_temperature"
+      ]
+    },
+    {
+      "icon": "/drivers/BeamMini/assets/icon.svg",
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/BeamMini/assets/small.jpg",
+        "large": "/drivers/BeamMini/assets/large.jpg"
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        }
+      ],
+      "id": "BeamMini",
+      "name": {
+        "en": "Beam Mini"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "beam_humidity",
+        "beam_mode_mini",
+        "beam_mini_spray_volume",
+        "measure_humidity",
+        "measure_temperature"
+      ]
+    },
+    {
+      "icon": "/drivers/Bright/assets/icon.svg",
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/Bright/assets/small.jpg",
+        "large": "/drivers/Bright/assets/large.jpg"
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        }
+      ],
+      "id": "Bright",
+      "name": {
+        "en": "Bright"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "bright_fan_speed",
+        "generic_ioniser_mode",
+        "measure_pm25",
+        "measure_filter"
+      ]
+    },
+    {
+      "icon": "/drivers/Edge/assets/icon.svg",
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/Edge/assets/small.jpg",
+        "large": "/drivers/Edge/assets/large.jpg"
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        }
+      ],
+      "id": "Edge",
+      "name": {
+        "en": "Edge"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "edge_heat_level",
+        "measure_temperature",
+        "generic_night_mode"
+      ]
+    },
+    {
+      "icon": "/drivers/Threesixty/assets/icon.svg",
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/Threesixty/assets/small.jpg",
+        "large": "/drivers/Threesixty/assets/large.jpg"
+      },
+      "pair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_oauth2",
+          "template": "login_oauth2"
+        }
+      ],
+      "id": "Threesixty",
+      "name": {
+        "en": "Threesixty"
+      },
+      "class": "fan",
+      "capabilities": [
+        "onoff",
+        "target_temperature",
+        "threesixty_heat_level",
+        "measure_temperature"
+      ]
+    }
+  ],
+  "capabilities": {
+    "beam_humidity": {
+      "type": "number",
+      "title": {
+        "en": "Humidity",
+        "nl": "Luchtvochtigheid"
+      },
+      "uiComponent": "slider",
+      "getable": true,
+      "setable": true,
+      "units": "%",
+      "min": 20,
+      "max": 80,
+      "step": 1,
+      "_driverIds": [
+        "Beam",
+        "BeamMini"
+      ]
+    },
+    "beam_mini_spray_volume": {
+      "type": "string",
+      "title": {
+        "en": "Mode",
+        "nl": "Mode"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "I"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "II"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "III"
+          }
+        }
+      ],
+      "_driverIds": [
+        "BeamMini"
+      ]
+    },
+    "beam_mode": {
+      "type": "string",
+      "title": {
+        "en": "Mode",
+        "nl": "Modus"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "Manual",
+            "nl": "Handmatig"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "Auto",
+            "nl": "Automatisch"
+          }
+        }
+      ],
+      "_driverIds": [
+        "Beam"
+      ]
+    },
+    "beam_mode_mini": {
+      "type": "string",
+      "title": {
+        "en": "Mode",
+        "nl": "Modus"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "Normal",
+            "nl": "Normaal"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "Auto",
+            "nl": "Automatisch"
+          }
+        }
+      ],
+      "_driverIds": [
+        "BeamMini"
+      ]
+    },
+    "beam_spray_volume": {
+      "type": "string",
+      "title": {
+        "en": "Level",
+        "nl": "Niveau"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "0",
+          "title": {
+            "en": "Low",
+            "nl": "Laag"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "Medium",
+            "nl": "Medium"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "High",
+            "nl": "Hoog"
+          }
+        }
+      ],
+      "_driverIds": [
+        "Beam"
+      ]
+    },
+    "bright_fan_speed": {
+      "type": "string",
+      "title": {
+        "en": "Speed",
+        "nl": "Snelheid"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "1",
+          "title": {
+            "en": "I"
+          }
+        },
+        {
+          "id": "2",
+          "title": {
+            "en": "II"
+          }
+        },
+        {
+          "id": "3",
+          "title": {
+            "en": "III"
+          }
+        },
+        {
+          "id": "0",
+          "title": {
+            "en": "Auto"
+          }
+        },
+        {
+          "id": "4",
+          "title": {
+            "en": "Night",
+            "nl": "Nacht"
+          }
+        }
+      ],
+      "_driverIds": [
+        "Bright"
+      ]
+    },
+    "edge_heat_level": {
+      "type": "string",
+      "title": {
+        "en": "Heating",
+        "nl": "Verwarming"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "1",
+          "title": {
+            "en": "Eco"
+          }
+        },
+        {
+          "id": "0",
+          "title": {
+            "en": "Normal"
+          }
+        }
+      ],
+      "_driverIds": [
+        "Threesixty"
+      ]
+    },
+    "generic_ioniser_mode": {
+      "type": "boolean",
+      "title": {
+        "en": "Ioniser",
+        "nl": "Ionisator"
+      },
+      "uiComponent": "toggle",
+      "getable": true,
+      "setable": true,
+      "_driverIds": [
+        "Bright"
+      ]
+    },
+    "generic_night_mode": {
+      "type": "boolean",
+      "title": {
+        "en": "Night Mode",
+        "nl": "Nachtmodus"
+      },
+      "uiComponent": "toggle",
+      "getable": true,
+      "setable": true,
+      "_driverIds": [
+        "Edge"
+      ]
+    },
+    "measure_filter": {
+      "type": "number",
+      "title": {
+        "en": "Filter remaining",
+        "nl": "Filter resterend"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": "%",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "decimals": 0,
+      "_driverIds": [
+        "Bright"
+      ]
+    },
+    "measure_humidity": {
+      "type": "number",
+      "title": {
+        "en": "Current humidity",
+        "nl": "Huidige luchtvochtigheid"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": "%",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "decimals": 0
+    },
+    "measure_pm25": {
+      "type": "number",
+      "title": {
+        "en": "Particulate matter (PM 2.5)",
+        "nl": "Fijnstof (PM 2.5)"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": "µg/m³",
+      "min": 0,
+      "max": 999,
+      "step": 1,
+      "decimals": 0
+    },
+    "measure_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Current temperature",
+        "nl": "Huidige temperatuur"
+      },
+      "uiComponent": "sensor",
+      "getable": true,
+      "setable": false,
+      "units": "°C",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "decimals": 0
+    },
+    "target_temperature": {
+      "type": "number",
+      "title": {
+        "en": "Temperature",
+        "nl": "Temperatuur"
+      },
+      "uiComponent": "thermostat",
+      "getable": true,
+      "setable": true,
+      "units": "°C",
+      "_driverIds": [
+        "Edge",
+        "Threesixty"
+      ]
+    },
+    "threesixty_heat_level": {
+      "type": "string",
+      "title": {
+        "en": "Heating",
+        "nl": "Verwarming"
+      },
+      "uiComponent": "picker",
+      "getable": true,
+      "setable": true,
+      "values": [
+        {
+          "id": "2",
+          "title": {
+            "en": "1"
+          }
+        },
+        {
+          "id": "1",
+          "title": {
+            "en": "2"
+          }
+        },
+        {
+          "id": "0",
+          "title": {
+            "en": "3"
+          }
+        }
+      ],
+      "_driverIds": [
+        "Threesixty"
+      ]
+    }
+  }
+}
